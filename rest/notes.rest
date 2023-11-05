@@ -1,0 +1,26 @@
+### GET 
+GET http://localhost:3001/api/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4MzRmOGJjNC03NTk4LTExZWUtODM2My01Yzg3OWNkNmQ4NDYiLCJpYXQiOjE2OTg1Mjc4MjN9.MVXZsWqpFacKedgjcvf4TpqbPlg9sM0nggnEU4p0li4
+
+### POST
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4MzRmOGJjNC03NTk4LTExZWUtODM2My01Yzg3OWNkNmQ4NDYiLCJpYXQiOjE2OTg1Mjc4MjN9.MVXZsWqpFacKedgjcvf4TpqbPlg9sM0nggnEU4p0li4
+
+{
+  "content": "esta es la #",
+  "createAt": "2023/12/12",
+  "colorData": {
+    "code": "#96FACA"
+  }
+}
+
+### PATCH
+PATCH http://localhost:3001/api/notes/7266fe0a-74ca-11ee-8363-5c879cd6d846
+Content-Type: application/json
+{
+  "content": "no lo puedo creer x3"
+}
+
+### DELETE
+DELETE http://localhost:3001/api/notes/7266fe0a-74ca-11ee-8363-5c879cd6d846

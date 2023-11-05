@@ -1,0 +1,28 @@
+### Obtener todos los ususarios
+GET http://localhost:3001/api/users
+
+### Obtener usuarios por id
+GET http://localhost:3001/api/users/834f8bc4-7598-11ee-8363-5c879cd6d846
+
+### crear usuario
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "gmail": "enmanuelcpp@gmail.com",
+  "name": "ramses gonzalez",
+  "password": "12345678"
+}
+
+### actualizar usuario
+PATCH  http://localhost:3001/api/users/1b270e9d-7598-11ee-8363-5c879cd6d846
+Content-Type: application/json
+
+{
+  "newPassword": "1234556778",
+  "oldPassword": "ramsesgonzalez"
+}
+
+
+### eliminar usuarios
+DELETE http://localhost:3001/api/users/1b270e9d-7598-11ee-8363-5c879cd6d846

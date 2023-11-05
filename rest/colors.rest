@@ -1,0 +1,2 @@
+### opteniendo los colores
+GET http://localhost:3001/api/colors
