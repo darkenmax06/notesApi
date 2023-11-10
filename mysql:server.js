@@ -5,14 +5,40 @@ import { ColorModel } from "./models/colors.js"
 import NotesModel from "./models/notes.js"
 import UserModel from "./models/users.js"
 
-const {DBHOST,DBUSER, DBPASSWORD, DBPORT, DATABASE} = process.env
+const {
+  NODE_ENV,
+  DBHOST,
+  DBUSER, 
+  DBPASSWORD, 
+  DBPORT, 
+  DATABASE,
+  LOCAL_DBHOST,
+  LOCAL_DBUSER, 
+  LOCAL_DBPASSWORD, 
+  LOCAL_DBPORT, 
+  LOCAL_DATABASE
+} = process.env
 
-const config = {
-  host: DBHOST,
-  user: DBUSER,
-  password: DBPASSWORD,
-  port: DBPORT,
-  database: DATABASE
+
+
+let config = null
+
+if(NODE_ENV == "production"){
+  config = {
+    host: DBHOST,
+    user: DBUSER,
+    password: DBPASSWORD,
+    port: DBPORT,
+    database: DATABASE
+  }
+}else {
+  config = {
+    host: LOCAL_DBHOST,
+    user: LOCAL_DBUSER,
+    password: LOCAL_DBPASSWORD,
+    port: LOCAL_DBPORT,
+    database: LOCAL_DATABASE
+  }
 }
 
 
@@ -21,6 +47,7 @@ let connection = null
 try{
   connection = await mysql.createConnection(config)
   console.log("database connected")
+  console.log(`entorno: ${NODE_ENV}`)
 }catch(err){
   console.log(err)
 }

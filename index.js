@@ -1,6 +1,7 @@
 import "dotenv/config"
 import express, { json } from "express"
 import morgan from "morgan"
+import path from 'path'
 import errorHandling from "./middleware/errorHandler.js"
 import { colorRoute } from "./routes/colors.js"
 import loginRoute from "./routes/login.js"
@@ -9,16 +10,23 @@ import userRoutes from "./routes/users.js"
 
 function server ({notesModel, userModel,colorModel}){
   const app = express()
+  const dir = process.env.OLDPWD
+  console.log(path.dirname('.'))
 
   // MIDLEWARES
   app.use(json())
   app.use(morgan("dev"))
+
+
+  app.use(express.static( path.join(dir, '../packages/notesApp/dist/') ))
 
   // <= ROUTES =>
   app.use("/api/colors", colorRoute({colorModel}))
   app.use("/api/login", loginRoute({userModel}))
   app.use("/api/users",  userRoutes({userModel}))
   app.use("/api/notes",  notesRoutes({notesModel,userModel}))
+
+  app.use("*",  (req,res) => res.sendFile(  path.join(dir, '../packages/notesApp/dist/index.html') ))
 
   // <= ERROR ROUTES =>
   app.use("*", (req,res)=> {
