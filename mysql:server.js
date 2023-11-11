@@ -12,11 +12,7 @@ const {
   DBPASSWORD, 
   DBPORT, 
   DATABASE,
-  LOCAL_DBHOST,
-  LOCAL_DBUSER, 
-  LOCAL_DBPASSWORD, 
-  LOCAL_DBPORT, 
-  LOCAL_DATABASE
+  DATABASE_URL
 } = process.env
 
 
@@ -24,20 +20,14 @@ const {
 let config = null
 
 if(NODE_ENV == "production"){
+  config = DATABASE_URL
+}else {
   config = {
     host: DBHOST,
     user: DBUSER,
     password: DBPASSWORD,
     port: DBPORT,
     database: DATABASE
-  }
-}else {
-  config = {
-    host: LOCAL_DBHOST,
-    user: LOCAL_DBUSER,
-    password: LOCAL_DBPASSWORD,
-    port: LOCAL_DBPORT,
-    database: LOCAL_DATABASE
   }
 }
 
