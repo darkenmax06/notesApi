@@ -5,7 +5,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4MzRmO
 ### POST
 POST http://localhost:3001/api/notes
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4MzRmOGJjNC03NTk4LTExZWUtODM2My01Yzg3OWNkNmQ4NDYiLCJpYXQiOjE2OTg1Mjc4MjN9.MVXZsWqpFacKedgjcvf4TpqbPlg9sM0nggnEU4p0li4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4MGJkOTQxZi04MGE2LTExZWUtYjFmYy00ZTJiNWY1YjNjNzYiLCJpYXQiOjE2OTk3MTYzNDh9.xBo5c_ypFuTiKuRhxGqUR1-gk9p4fT6gEWfROSnKjP8
 
 {
   "content": "esta es la #",

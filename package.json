@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "mysql:server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "cross-env NODE_ENV=production node  mysql:server.js",
     "dev": "nodemon PORT=1234 index.js",
-    "dev:mysql": "cross-env nodemon PORT=1234 mysql:server.js"
+    "dev:mysql": "cross-env PORT=1234 NODE_ENV=development nodemon mysql:server.js"
   },
   "keywords": [],
   "author": "",
