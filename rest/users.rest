@@ -9,7 +9,7 @@ POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-  "gmail": "enmanuelcpp@gmail.com",
+  "gmail": "enmanuelsssscpp@gmail.com",
   "name": "ramses gonzalez",
   "password": "12345678"
 }
