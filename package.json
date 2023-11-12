@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "mysql:server.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node  mysql:server.js",
     "dev": "nodemon PORT=1234 index.js",
